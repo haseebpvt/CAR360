@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "311492778751",
+    "firebase_url": "https://car3603-db023.firebaseio.com",
+    "project_id": "car3603-db023",
+    "storage_bucket": "car3603-db023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311492778751:android:efdd69abaf6fc652",
+        "android_client_info": {
+          "package_name": "com.empowringup.sprouts.car360"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "311492778751-srkusehj8vn3clj8epfn7v4bi6hiodg0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.empowringup.sprouts.car360",
+            "certificate_hash": "2944f18c22feea7198c78581b8a4677e1179cfa2"
+          }
+        },
+        {
+          "client_id": "311492778751-69vovtjh43hf5nu8h8r0t0650n1ujfj1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFk7H5ycLvpt4JgCdlqev2v72HO0wsefw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "311492778751-69vovtjh43hf5nu8h8r0t0650n1ujfj1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
