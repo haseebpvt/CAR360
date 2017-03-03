@@ -23,7 +23,7 @@ public class ThreeFragment extends android.support.v4.app.Fragment {
         WebView fb = (WebView) v.findViewById(R.id.fb);
         fb.getSettings().setJavaScriptEnabled(true);
         fb.setWebViewClient(new SwAWebClient());
-//        fb.loadUrl("https://www.facebook.com/car360official/");
+        fb.loadUrl("https://www.facebook.com/car360official/");
         return v;
     }
 

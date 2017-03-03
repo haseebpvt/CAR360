@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        subscribeToPushService();
-
 
         //ADS
         mAdView = (AdView)findViewById(R.id.adView);
@@ -70,28 +68,18 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.getTabAt(0).setIcon(R.drawable.www);
-        tabLayout.getTabAt(1).setIcon(R.drawable.www);
-        tabLayout.getTabAt(2).setIcon(R.drawable.bell);
+        tabLayout.getTabAt(1).setIcon(R.drawable.bell);
+//        tabLayout.getTabAt(1).setIcon(R.drawable.fb);
+
     }
 
-    private void subscribeToPushService() {
-        FirebaseMessaging.getInstance().subscribeToTopic("news");
-
-        Log.d("AndroidBash", "Subscribed");
-        Toast.makeText(MainActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
-
-        String token = FirebaseInstanceId.getInstance().getToken();
-
-        // Log and toast
-        Log.d("AndroidBash", token);
-        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
-    }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new OneFragment(), null);
-//        adapter.addFragment(new ThreeFragmentgment(), null);
         adapter.addFragment(new TwoFragment(), null);
+//        adapter.addFragment(new ThreeFragment(), null);
+
         viewPager.setAdapter(adapter);
     }
 
