@@ -1,5 +1,6 @@
 package com.empowringup.sprouts.car360;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -8,9 +9,13 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +37,25 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //NOTIFICATION
+        if (getIntent().getExtras() != null) {
+
+            for (String key : getIntent().getExtras().keySet()) {
+                String value = getIntent().getExtras().getString(key);
+
+                if (key.equals("AnotherActivity") && value.equals("True")) {
+                    Intent intent = new Intent(this, MainActivity.class);
+                    intent.putExtra("value", value);
+                    startActivity(intent);
+                    finish();
+                }
+
+            }
+        }
+
+        subscribeToPushService();
+
+
         //ADS
         mAdView = (AdView)findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -48,6 +72,19 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(0).setIcon(R.drawable.www);
         tabLayout.getTabAt(1).setIcon(R.drawable.fb);
         tabLayout.getTabAt(2).setIcon(R.drawable.bell);
+    }
+
+    private void subscribeToPushService() {
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+
+        Log.d("AndroidBash", "Subscribed");
+        Toast.makeText(MainActivity.this, "Subscribed", Toast.LENGTH_SHORT).show();
+
+        String token = FirebaseInstanceId.getInstance().getToken();
+
+        // Log and toast
+        Log.d("AndroidBash", token);
+        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
     }
 
     private void setupViewPager(ViewPager viewPager) {
