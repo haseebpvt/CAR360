@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
         //ADS
         mAdView = (AdView)findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -72,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
 //        tabLayout.getTabAt(1).setIcon(R.drawable.fb);
 
     }
-
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
