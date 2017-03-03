@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         tabLayout.getTabAt(0).setIcon(R.drawable.www);
-        tabLayout.getTabAt(1).setIcon(R.drawable.fb);
+        tabLayout.getTabAt(1).setIcon(R.drawable.www);
         tabLayout.getTabAt(2).setIcon(R.drawable.bell);
     }
 
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new OneFragment(), null);
-        adapter.addFragment(new ThreeFragment(), null);
+//        adapter.addFragment(new ThreeFragmentgment(), null);
         adapter.addFragment(new TwoFragment(), null);
         viewPager.setAdapter(adapter);
     }
