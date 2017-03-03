@@ -61,14 +61,27 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 PendingIntent.FLAG_ONE_SHOT);
 
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setLargeIcon(null)/*Notification icon image*/
-                .setSmallIcon(R.drawable.logo)
-                .setContentTitle(messageBody)
-                .setStyle(new NotificationCompat.BigPictureStyle()
-                        .bigPicture(null))/*Notification with Image*/
+//        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this);
+//                .setLargeIcon(null)/*Notification icon image*/
+//                .setSmallIcon(null)
+//                .setContentTitle(messageBody)
+//                .setStyle(new NotificationCompat.BigPictureStyle()
+//                        .bigPicture(null))/*Notification with Image*/
+//                .setAutoCancel(true)
+//                .setSound(defaultSoundUri)
+//                .setContentIntent(pendingIntent);
+
+//        notificationBuilder.setSmallIcon(R.drawable.bell);
+//        notificationBuilder.setContentTitle(messageBody);
+//        notificationBuilder.setAutoCancel(true);
+//        notificationBuilder.setSound(defaultSoundUri);
+//        notificationBuilder.setContentIntent(pendingIntent);
+
+        NotificationCompat.Builder notificationBuilder = new
+                NotificationCompat.Builder(this)
+                .setSmallIcon(R.drawable.bell)
+                .setContentTitle("Message")
                 .setAutoCancel(true)
-                .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent);
 
         NotificationManager notificationManager =
