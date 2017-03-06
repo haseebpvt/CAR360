@@ -15,7 +15,9 @@ package com.empowringup.sprouts.car360;
 
 
 public class OneFragment extends android.support.v4.app.Fragment {
-    
+
+
+    String ulr;
     private WebView webView;
 
     @Override
@@ -26,12 +28,15 @@ public class OneFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        ulr = webView.getUrl();
+
         View v = inflater.inflate(R.layout.fragment_one, container, false);
             WebView website = (WebView) v.findViewById(R.id.website);
             website.getSettings().setJavaScriptEnabled(true);
             website.setWebViewClient(new SwAWebClient());
             website.loadUrl("http://car360official.blogspot.in/");
         return v;
+
     }
 
     private class SwAWebClient extends WebViewClient {
@@ -40,27 +45,7 @@ public class OneFragment extends android.support.v4.app.Fragment {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             return false;
         }
-    }
 
-        
-    //Back key button [HASEEB ADDED THIS]
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            switch (keyCode) {
-                case KeyEvent.KEYCODE_BACK:
-                    if (webView.canGoBack()) {
-                        webView.goBack();
-                    } 
-//                    else {
-//                        finish();
-//                    }
-                    return true;
-            }
-
-        }
-        return super.onKeyDown(keyCode, event);
     }
-        
         
 }

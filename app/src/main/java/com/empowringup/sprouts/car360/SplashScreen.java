@@ -35,7 +35,7 @@ public class SplashScreen extends Activity {
             @Override
             public void run() {
 
-                //[HASEEB ADDED THIS]FIREBASE LISTNER
+                //[HASEEB ADDED THIS]FIREBASE AUTH LISTNER
                 mAuth = FirebaseAuth.getInstance();
 
                 mAuthListner = new FirebaseAuth.AuthStateListener() {
@@ -51,7 +51,7 @@ public class SplashScreen extends Activity {
                     }
                 };
 
-                Intent i = new Intent(SplashScreen.this, LoginActivity.class);
+                Intent i = new Intent(SplashScreen.this, MainActivity.class);
                 startActivity(i);
 
                 finish();
