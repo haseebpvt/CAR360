@@ -5,6 +5,7 @@ package com.empowringup.sprouts.car360;
         import android.support.v4.app.Fragment;
         import android.support.v4.app.FragmentActivity;
         import android.util.Log;
+        import android.view.KeyEvent;
         import android.view.LayoutInflater;
         import android.view.View;
         import android.view.ViewGroup;
@@ -14,6 +15,8 @@ package com.empowringup.sprouts.car360;
 
 
 public class OneFragment extends android.support.v4.app.Fragment {
+    
+    private WebView webView;
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -38,4 +41,26 @@ public class OneFragment extends android.support.v4.app.Fragment {
             return false;
         }
     }
+
+        
+    //Back key button [HASEEB ADDED THIS]
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+            switch (keyCode) {
+                case KeyEvent.KEYCODE_BACK:
+                    if (webView.canGoBack()) {
+                        webView.goBack();
+                    } 
+//                    else {
+//                        finish();
+//                    }
+                    return true;
+            }
+
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+        
+        
 }
