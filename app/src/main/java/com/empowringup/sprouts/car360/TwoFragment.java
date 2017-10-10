@@ -23,7 +23,7 @@ public class TwoFragment extends android.support.v4.app.Fragment {
         WebView notification = (WebView) v.findViewById(R.id.notification);
         notification.getSettings().setJavaScriptEnabled(true);
         notification.setWebViewClient(new SwAWebClient());
-        notification.loadUrl("http://car360.netau.net/app/index.html");
+        notification.loadUrl("https://www.facebook.com/car360official/");
         return v;
     }
 
