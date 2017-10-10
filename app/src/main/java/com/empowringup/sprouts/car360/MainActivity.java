@@ -121,7 +121,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onBackClick(View view){
-        webView.goBack();
+        try {
+            webView.goBack();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
