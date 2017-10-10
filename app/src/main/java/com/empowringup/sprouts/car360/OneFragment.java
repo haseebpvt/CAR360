@@ -28,7 +28,11 @@ public class OneFragment extends android.support.v4.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        ulr = webView.getUrl();
+        try {
+            ulr = webView.getUrl();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         View v = inflater.inflate(R.layout.fragment_one, container, false);
             WebView website = (WebView) v.findViewById(R.id.website);
