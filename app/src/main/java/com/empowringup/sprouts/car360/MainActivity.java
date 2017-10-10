@@ -26,6 +26,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Adding a comment
+
     private AdView mAdView;
 
     private Toolbar toolbar;
