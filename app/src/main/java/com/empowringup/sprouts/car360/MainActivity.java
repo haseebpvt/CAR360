@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
     *
     * */
 
-    private AdView mAdView;
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -67,11 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         }
-
-        //ADS
-        mAdView = (AdView)findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
 
         //TABS
