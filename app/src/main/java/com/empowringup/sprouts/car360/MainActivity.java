@@ -27,6 +27,15 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     //Adding a comment
+    /*
+    * Important Message
+    * This branch is develope branch
+    * Any one can request a pull to this
+    * If there is any important features you can -
+    * contribut please pull a reuest so we can -
+    * review your code
+    *
+    * */
 
     private AdView mAdView;
 
