@@ -2,5 +2,4 @@
 
 Welcome to CAR 360 Project
 
-What is CAR 360?
-CAR 360 is an automobile review youtube channel. We have Facebook page and groups in WhatsApp and Telegram. 
+CAR 360 is an automobile review team. We have hosted our Android applicatin on playstore. But currently our app only show our blog in a web view. We are planning to change it like a social media platform where people can post news about automobile related news and use as a platform to sell used vehicles. More features are invitable.
